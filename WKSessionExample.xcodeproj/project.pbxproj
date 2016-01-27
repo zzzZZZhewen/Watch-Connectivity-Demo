@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8150A4121C58BB0B0076488E /* avatar.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8150A4111C58BB0B0076488E /* avatar.jpg */; };
 		81BEF8871C5525CF000EA3A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BEF8861C5525CF000EA3A3 /* AppDelegate.swift */; };
 		81BEF8891C5525CF000EA3A3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BEF8881C5525CF000EA3A3 /* ViewController.swift */; };
 		81BEF88C1C5525CF000EA3A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81BEF88A1C5525CF000EA3A3 /* Main.storyboard */; };
@@ -64,6 +65,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		8150A4111C58BB0B0076488E /* avatar.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = avatar.jpg; sourceTree = "<group>"; };
 		81BEF8831C5525CF000EA3A3 /* WKSessionExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WKSessionExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		81BEF8861C5525CF000EA3A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		81BEF8881C5525CF000EA3A3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 		81BEF8851C5525CF000EA3A3 /* WKSessionExample */ = {
 			isa = PBXGroup;
 			children = (
+				8150A4111C58BB0B0076488E /* avatar.jpg */,
 				81BEF8861C5525CF000EA3A3 /* AppDelegate.swift */,
 				81BEF8881C5525CF000EA3A3 /* ViewController.swift */,
 				81BEF88A1C5525CF000EA3A3 /* Main.storyboard */,
@@ -259,6 +262,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8150A4121C58BB0B0076488E /* avatar.jpg in Resources */,
 				81BEF8911C5525CF000EA3A3 /* LaunchScreen.storyboard in Resources */,
 				81BEF88E1C5525CF000EA3A3 /* Assets.xcassets in Resources */,
 				81BEF88C1C5525CF000EA3A3 /* Main.storyboard in Resources */,
@@ -528,6 +532,7 @@
 				81BEF8B41C5525CF000EA3A3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		81BEF8B61C5525CF000EA3A3 /* Build configuration list for PBXNativeTarget "WKSessionExample WatchKit App" */ = {
 			isa = XCConfigurationList;
@@ -536,6 +541,7 @@
 				81BEF8B81C5525CF000EA3A3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		81BEF8BA1C5525CF000EA3A3 /* Build configuration list for PBXNativeTarget "WKSessionExample" */ = {
 			isa = XCConfigurationList;
@@ -544,6 +550,7 @@
 				81BEF8BC1C5525CF000EA3A3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

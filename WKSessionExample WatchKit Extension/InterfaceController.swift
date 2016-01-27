@@ -12,28 +12,17 @@ import WatchConnectivity
 
 class InterfaceController: WKInterfaceController, WCSessionDelegate {
 
+    private let session: WCSession? = WCSession.isSupported() ? WCSession.defaultSession() : nil
+    
+    override init() {
+        super.init()
+        
+        session?.delegate = self
+        session?.activateSession()
+    }
+    
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
-        
-        if WCSession.isSupported() {
-            let session = WCSession.defaultSession()
-            session.delegate = self
-            session.activateSession()
-            
-            let answer = try?session.updateApplicationContext(["a" : "b"])
-            
-            
-            session.sendMessage(["c":"d"], replyHandler: { (message) -> Void in
-                print("reply")
-                print(session.reachable)
-                }, errorHandler: { (error) -> Void in
-                print("error")
-                print(session.reachable)
-            })
-            
-            
-        }
-        
         
         // Configure interface objects here.
     }
@@ -48,4 +37,42 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
         super.didDeactivate()
     }
 
+    func session(session: WCSession, didReceiveApplicationContext applicationContext: [String : AnyObject]) {
+        if let number = applicationContext["updateNumber"] as? Int {
+            recievedLabel.setText("updateNubmer: \(number)")
+        }
+    }
+    
+    func session(session: WCSession, didReceiveMessage message: [String : AnyObject], replyHandler: ([String : AnyObject]) -> Void) {
+        
+        dispatch_async(dispatch_get_main_queue()) {
+            if let number = message["sendNumber"] as? Int {
+                self.recievedLabel.setText("sendNumber: \(number)")
+                replyHandler(["replyNumber": number + 1])
+            }
+            self.recievedImage.setImage(nil)
+        }
+    }
+    
+    func session(session: WCSession, didReceiveUserInfo userInfo: [String : AnyObject]) {
+        if let number = userInfo["userInfoNumber"] as? Int {
+            recievedLabel.setText("userInfoNumber: \(number)")
+        }
+    }
+    
+    func session(session: WCSession, didReceiveFile file: WCSessionFile) {
+        if let imageData = NSData(contentsOfURL: file.fileURL){
+            recievedImage.setImage(UIImage(data: imageData))
+        } else {
+            print("not a valid image file url")
+        }
+        
+        if let number = file.metadata?["fileNumber"] as? Int {
+            self.recievedLabel.setText("fileNumber: \(number)")
+        }
+    }
+    
+    @IBOutlet var recievedLabel: WKInterfaceLabel!
+    @IBOutlet var recievedImage: WKInterfaceImage!
+    
 }
