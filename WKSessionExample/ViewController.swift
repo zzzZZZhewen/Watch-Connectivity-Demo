@@ -69,8 +69,7 @@ class ViewController: UIViewController, WCSessionDelegate {
             if session!.reachable {
                 session?.sendMessage(["sendNumber":counter],
                     replyHandler: { (reply) -> Void in
-                        var number = reply["replyNumber"] as! Int
-                        number++
+                        let number = reply["replyNumber"] as! Int
                         self.replyLabel.text = String(number)
                     }, errorHandler: { (error) -> Void in
                         print(error)

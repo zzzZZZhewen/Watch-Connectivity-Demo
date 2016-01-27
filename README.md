@@ -1,3 +1,6 @@
-# WKSessionExample
-An easy home-made example for WKSession learning
-确切的说其实是Watch Connectivity Framework 的demo啦，只是随我的博文附送 详见我的博客 miaozhewen.cn
+# Watch Connectivity Demo
+其实我是在翻译官方关于这个库的文档到中文啦
+
+一不小心把项目名称里的WCSession写成WKSession 抱歉啦
+
+有兴趣的话可以到我的博客miaozhewen.cn看看
